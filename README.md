@@ -11,5 +11,5 @@ Alias search bots with their ip addresses.
 
 ## limitations
 
-Kibana is a sibgle page app with angular js.
+Kibana is a single page app with angular js.
 Extension start works after timeout and need page reloading on dashboard where ip block present.
