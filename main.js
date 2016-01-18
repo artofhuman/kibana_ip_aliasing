@@ -1,7 +1,7 @@
 if (window.top === window) {
-  var inspectorScript = document.createElement('script');
+  var script = document.createElement('script');
 
-  inspectorScript.type = 'text/javascript';
-  inspectorScript.src = chrome.extension.getURL('/aliasing.js');
-  document.head.appendChild(inspectorScript);
+  script.type = 'text/javascript';
+  script.src = chrome.extension.getURL('/aliasing.js');
+  document.head.appendChild(script);
 }
