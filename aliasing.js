@@ -16,14 +16,18 @@ function addAliasses() {
           '(157\.(5[4-9]|60?)\.[0-9]{1,3}\.[0-9]{1,3})|' +
           '(104\.(20[8-9]|21[0-5])\.[0-9]{1,3}\.[0-9]{1,3})',
     'GOOGLE': '(66\.249\.(6[4-9]|7[0-9]|8[0-9]|9[0-5])\.[0-9]{1,3})',
-    'YANDEX': '(130\.193\.51\.[0-9]{1,3})|(141\.8\.(142|183)\.[0-9]{1,3})'
+    'YANDEX': '(130\.193\.51\.[0-9]{1,3})|'+
+              '(141\.8\.(142|183)\.[0-9]{1,3})'
   };
 
   for (bot_name in aliases) {
     var pattern = aliases[bot_name];
-
     var re = new RegExp(pattern, "gi");
-    $ips_panel.html( $ips_panel.html().replace(re, '$& [' + bot_name + ']'));
+
+    $.each($ips_panel.find('td.cell-hover'), function(i, e){
+      var $elem = $(e);
+      $elem.text( $elem.text().replace(re, '$& [' + bot_name + ']') );
+    });
   }
 }
 
