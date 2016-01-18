@@ -1,0 +1,16 @@
+{
+  "name": "Kibana ip aliasing",
+  "description": "alias ips in kibana with real names",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://kibana.railsc.ru/"],
+      "js": ["main.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    "aliasing.js"
+  ]
+}
